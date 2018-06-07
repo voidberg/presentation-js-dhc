@@ -4,10 +4,10 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>Open Source Licenses - Drupal HackCamp</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+		<link rel="stylesheet" href="css/theme/dhc.css">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -24,8 +24,286 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section data-markdown>
+					# JS Security
+				</section>
+				<section data-markdown>
+					![Alexandru Badiu](images/profile.jpg)
+					### Alexandru Badiu
+					#### @ BEN / Drupal Romania
+				</section>
+				<section data-markdown>
+					# Client and Server Side
+				</section>
+				<section data-markdown>
+					## What I will talk about
+					* What is copyright? What's a license?
+					* Open Source licenses in use.
+					* Their issues.
+					* Choosing one.
+				</section>
+				<section data-markdown>
+					## Copyright
+					* Berne Convention.
+					* A bit of text, some code, a drawing.
+					* Instant copyright!
+					* (Registration not required.)
+					* Expression of an idea and not the idea itself.
+					* Copyright expires.		
+				</section>
+				<section data-markdown>
+					## You have the right...
+					* to paaaarty
+					* to copy
+					* to not copy (but there's fair-use)
+					* to sue (statutory damages)
+				</section>
+				<section data-markdown>
+					## Who owns the code?
+					## You!
+				</section>
+				<section data-markdown>
+					## But...
+					* You're contracting / freelancing.
+					* You're fulltime and your contract says otherwise.
+				</section>
+				<section data-markdown>
+					## Licenses
+					* Permissions granted to others.
+					* Without assigning the copyright to them.
+					* You can dual license.
+					* Proprietary licenses.
+					* Free software licenses.
+					* Open Source licenses.
+				</section>
+				<section data-markdown>
+					![License breakdown](images/breakdown.png)
+					
+					License breakdown on Github, as of 2015. On other sites GPL is still the king.
+				</section>
+				<section data-markdown>
+					![License evolution](images/growth.png)
+				
+					License evolution on Github, as of 2015.
+				</section>
+				<section data-markdown>
+					## No license
+					* You have no right.
+					* Even if it's on Github.
+					* No license is not public domain.
+					* Public domain is tricky.
+				</section>
+				<section data-markdown>
+					![Unlicensed repositories](images/unlicensed.png)
+			
+					Licensed projects on Github, as of 2015.
+				</section>
+				<section data-markdown>
+					## Licenses
+					### Copyleft
+					#### (Viral)
+					### Permissive
+					#### (non copyleft)
+				</section>
+				<section data-markdown>
+					## Copyleft
+					### Are like the borg, they assimilate.
+					## Permissive
+					### Not the borg.
+				</section>
+				<section data-markdown>
+					## GPL
+					### The most used
+					#### (and known)
+					* Created by Richard Stallman for GNU.
+					* Version 2 and 3 are used.
+				</section>
+				<section data-markdown>
+					## GPL
+					#### In a nutshell:
+					* If you distribute / sell a product that uses GPL code, you need to provide the source and it needs to be GPL.
+					* Private use is fine.
+				</section>
+				<section data-markdown>
+					## GPL
+					* Version 2: Liberty or death
+					* Version 3: Tivoization, patents.
+					* "Version 2 or later".
+				</section>
+				<section data-markdown>
+					## GPL
+					* Web frameworks
+					* Selling themes / Plugins
+					* Usage in SaaS products
+					* Static / dynamic linking
+					* Appstores
+				</section>
+				<section data-markdown>
+					## GPL
+					* Wordpress, Drupal are GPL.
+					* Hosting your website is not distributing.
+					* Contracting means, however, that you're writing GPL code.
+				</section>
+				<section data-markdown>
+					## GPL
+					* Selling plugins or themes is ok, but they're GPL.
+					* The consensus is that you're being payed for customizations and support.
+					* Generally images and stylesheets are not considered GPL.
+					* None of this has been proven in a court of law.
+					* Bridging is sometimes ok.
+				</section>
+				<section data-markdown>
+					## GPL
+					* When GPL 2 was written there was no SaaS.
+					* This was a problem for some.
+					* AGPL fixed it.
+					* GPL 3 avoided it.
+				</section>
+				<section data-markdown>
+					## GPL
+					* Linking to GPL code means that your code must be GPL.
+					* LGPL was created to avoid that.
+					* Key: dynamic linking.
+					* Until iOS 8 you couldn't dynamically link.
+					* Libraries moved to another license.
+				</section>
+				<section data-markdown>
+					## Appstores
+					* "To make a copy for your neighbour" conflicts with DRM.
+					* Mac, iOS App Store are a no no.
+					* Android, Linux appstores are fine.
+					* VLC was pulled off initially.
+					* Dual license (like MySQL did).
+				</section>
+				<section data-markdown>
+					## GPL 3
+					### Is compatible with:
+					* GPL 2 (if "or later" is used)
+					* LGPL, AGPL, Apache 2.0, *BSD, MPL, MIT.
+				</section>
+				<section data-markdown>
+					## GPL 3
+					### Is not compatible with:
+					* GPL 2
+					* AGPL 1, Apache 1.x, APSL, Original BSD, MPL 1.1
+					
+					[More on GNU compatible licenses](https://www.gnu.org/licenses/license-list.html#GPLCompatibleLicenses).
+				</section>
+				<section data-markdown>
+					## BSD, MIT, ISC
+					* On the other side of the spectrum.
+					* Pretty much do what you want.
+					* Nothing about patents.
+					* Nothing about trademarks.
+					* Simple language.
+				</section>
+				<section data-markdown>
+					## MPL
+					* In the middle.
+					* Allows proprietary use.
+					* Result can be under a proprietary license.
+					* Can be part of closed source software.
+					* MPL code must be made available.
+					* Patents, trademarks.
+				</section>
+				<section data-markdown>
+					## Apache
+					* Do what you want.
+					* Preserve copyright, license, notices.
+					* State changes made.
+					* Patents, trademarks.
+				</section>
+				<section data-markdown>
+					## Fair Source
+					* Tries to monetize OSS.
+					* More than 15 employees: pay.
+					* Difficult to integrate with other licenses.
+					* Sourcegraph, Codenvy, Data Duck, GitLab.
+				</section>
+				<section data-markdown>
+					## Public domain
+					* Public domain is tricky.
+					* Some lawyers say you can't put things in the public domain.
+					* Some say you can via a 'dedication'.
+					* This is difficult in EU due to 'moral rights'.
+					* sqlite
+				</section>
+				<section data-markdown>
+					## Unlicense
+					* Tries to put code in the public domain via a license.
+					* Doesn't quite work due to 'moral rights'.
+					* Don't use it.
+				</section>
+				<section data-markdown>
+					## WTFPL
+					* Do what the fuck you want to license.
+					* Don't use it.
+				</section>
+				<section data-markdown>
+					## Creative Commons
+					* Books, music, photos, blog posts etc.
+					* Not recommended for code.
+					* CC0 is the equivalent of Unlicense.
+				</section>
+				<section data-markdown>
+					## Which one to choose?
+					* It really depends on your project.
+					* MIT, Apache 2.0, GPLv3
+					
+					[choosealicense.com](http://choosealicense.com/)
+				</section>
+				<section data-markdown>
+					## Other things
+					* Watch for simple licenses with extra things.
+					* e.g. react's PATENTS file.
+					* Stack Overflow's content is CC, migrating to MIT.
+					* You probably violated the license.
+				</section>
+				<section data-markdown>
+					# So you've started an FOSS project
+				</section>
+				<section data-markdown>
+					### Contributions come.
+					### Project grows, gains traction.
+					### You have 100 contributors.
+				</section>
+				<section data-markdown>
+					## And then...
+					* You decide to change or add another license.
+					* You want to sue someone.
+					* You are getting sued because somebody contributed "bad" code.
+				</section>
+				<section data-markdown>
+					## So...
+					* You have to get approval from 100 people.
+					* You have to involve anyone in the lawsuit.
+					* You are getting sued for someone else's mistake.
+				</section>
+				<section data-markdown>
+					## Contributor License Agreement
+					* Copyright gets transferred to you / your organization.
+					* Can protect you from getting sued.
+					* Moral rights rears it's head.
+				</section>
+				<section data-markdown>
+					## VLC
+					* Moved from GPL to LGPL.
+					* French, so moral and patrimonial rights.
+					* libVLC: 150 devs, 80,000 locs.
+					* Plugins: 300 devs, 300,000 locs.
+				</section>
+				<section data-markdown>
+					## Resources
+					
+					* [http://choosealicense.com/](http://choosealicense.com/)
+					* [https://tldrlegal.com](https://tldrlegal.com)
+				</section>
+				<section data-markdown>
+					## Thank you!
+					#### [andu@ctrlz.ro](mailto:andu@ctrlz.ro)
+					#### [@voidberg](https://twitter.com/voidberg)
+					#### [Rate the sessions](https://www.surveymonkey.com/r/QTLXNVQ)
+				</section>								
 			</div>
 		</div>
 
@@ -37,6 +315,7 @@
 			// - https://github.com/hakimel/reveal.js#configuration
 			// - https://github.com/hakimel/reveal.js#dependencies
 			Reveal.initialize({
+				history: true,
 				dependencies: [
 					{ src: 'plugin/markdown/marked.js' },
 					{ src: 'plugin/markdown/markdown.js' },
