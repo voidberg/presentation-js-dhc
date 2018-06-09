@@ -36,274 +36,322 @@
 					# Client and Server Side
 				</section>
 				<section data-markdown>
-					## What I will talk about
-					* What is copyright? What's a license?
-					* Open Source licenses in use.
-					* Their issues.
-					* Choosing one.
+					* More and more we are integrating "modern" js tools / frameworks / workflows into our development.
+					* Especially with headless Drupal.
 				</section>
 				<section data-markdown>
-					## Copyright
-					* Berne Convention.
-					* A bit of text, some code, a drawing.
-					* Instant copyright!
-					* (Registration not required.)
-					* Expression of an idea and not the idea itself.
-					* Copyright expires.		
+					# NPM
 				</section>
 				<section data-markdown>
-					## You have the right...
-					* to paaaarty
-					* to copy
-					* to not copy (but there's fair-use)
-					* to sue (statutory damages)
+					## We are abusing it
+				</section>
+				<section>
+					<pre><code>npm i someone-elses-code --save</code></pre>
+
+					<ul>
+						<li>No standard lib.</li>
+						<li>Lack of features.</li>
+						<li>Inconsistency in the language.</li>
+						<li>Dependency culture.</li>
+					</ul>
 				</section>
 				<section data-markdown>
-					## Who owns the code?
-					## You!
+					## Single point of failure
 				</section>
 				<section data-markdown>
-					## But...
-					* You're contracting / freelancing.
-					* You're fulltime and your contract says otherwise.
+					* DoS
+					* Mistakes:
+						* Unpublished packages.
+						* Cert mistakes.
+					* Deleted packages (`left-pad` fiasco).
+					* We get broken builds.
 				</section>
 				<section data-markdown>
-					## Licenses
-					* Permissions granted to others.
-					* Without assigning the copyright to them.
-					* You can dual license.
-					* Proprietary licenses.
-					* Free software licenses.
-					* Open Source licenses.
+					* npm Enterprise.
+					* Your own registry.
+					* Artifactory, Sinopia, Verdaccio.
+					* `yarn` with offline mirror.
 				</section>
 				<section data-markdown>
-					![License breakdown](images/breakdown.png)
-					
-					License breakdown on Github, as of 2015. On other sites GPL is still the king.
+					## Most code comes from NPM
 				</section>
 				<section data-markdown>
-					![License evolution](images/growth.png)
-				
-					License evolution on Github, as of 2015.
+					* In general, the code in our app comes from other people.
+					* 100 devs? 1000 devs?
+					* Do you trust them?
+					* 14% of NPM packages have issues.
 				</section>
 				<section data-markdown>
-					## No license
-					* You have no right.
-					* Even if it's on Github.
-					* No license is not public domain.
-					* Public domain is tricky.
+					* Our code can be bullet proof.
+					* Other people's code can bring lots of vulnerabilities.
 				</section>
 				<section data-markdown>
-					![Unlicensed repositories](images/unlicensed.png)
-			
-					Licensed projects on Github, as of 2015.
+					## Malicious code
 				</section>
 				<section data-markdown>
-					## Licenses
-					### Copyleft
-					#### (Viral)
-					### Permissive
-					#### (non copyleft)
+					* You are trusting someone else's code.
+					* No chain of proof from github -> npm.
+					* No "namespace": `voidberg/foo` vs `foo`.
 				</section>
 				<section data-markdown>
-					## Copyleft
-					### Are like the borg, they assimilate.
-					## Permissive
-					### Not the borg.
+					* Lifecycle hooks.
+					* Also hooks of deps.
+					* `rimrafall`.
+					* `--ignore-scripts`
+					* Inject code.
 				</section>
 				<section data-markdown>
-					## GPL
-					### The most used
-					#### (and known)
-					* Created by Richard Stallman for GNU.
-					* Version 2 and 3 are used.
+					* Typosquatting.
+					* `cross-env` versus `crossenv`.
+					* 40 packages undetected for two weeks.
+					* `validator.js` vs `validator`.
+					* `socket.io` vs `socketio`.
 				</section>
 				<section data-markdown>
-					## GPL
-					#### In a nutshell:
-					* If you distribute / sell a product that uses GPL code, you need to provide the source and it needs to be GPL.
-					* Private use is fine.
+					* No official release?
+					* I can take code from Github.
+					* And publish it on NPM.
+					* Bam! No namespace: official name!
+					* Different code, same author.
 				</section>
 				<section data-markdown>
-					## GPL
-					* Version 2: Liberty or death
-					* Version 3: Tivoization, patents.
-					* "Version 2 or later".
+					## Crypto and Auth
 				</section>
 				<section data-markdown>
-					## GPL
-					* Web frameworks
-					* Selling themes / Plugins
-					* Usage in SaaS products
-					* Static / dynamic linking
-					* Appstores
+					* Crypto is really hard.
+					* Most people write bad crypto code.
+					* Don't blindly use *any* library.
 				</section>
 				<section data-markdown>
-					## GPL
-					* Wordpress, Drupal are GPL.
-					* Hosting your website is not distributing.
-					* Contracting means, however, that you're writing GPL code.
+					* Auth is not as hard but still.
+					* Some libraries are exploitable.
+					* Some tutorials are horrible.
+					* JTW and the `none` algo.
+					* Don't blindly use *any* library.
 				</section>
 				<section data-markdown>
-					## GPL
-					* Selling plugins or themes is ok, but they're GPL.
-					* The consensus is that you're being payed for customizations and support.
-					* Generally images and stylesheets are not considered GPL.
-					* None of this has been proven in a court of law.
-					* Bridging is sometimes ok.
+					# Help!
 				</section>
 				<section data-markdown>
-					## GPL
-					* When GPL 2 was written there was no SaaS.
-					* This was a problem for some.
-					* AGPL fixed it.
-					* GPL 3 avoided it.
+					## Easy
+					* Have 0 dependencies.
+					* Don't use NPM.
+					* Don't use NodeJS.
 				</section>
 				<section data-markdown>
-					## GPL
-					* Linking to GPL code means that your code must be GPL.
-					* LGPL was created to avoid that.
-					* Key: dynamic linking.
-					* Until iOS 8 you couldn't dynamically link.
-					* Libraries moved to another license.
+					## There is no solution
+					* Be aware.
+					* Look at code before installing.
+					* Try to limit dependencies.
+					* Pin the dependencies' versions.
 				</section>
 				<section data-markdown>
-					## Appstores
-					* "To make a copy for your neighbour" conflicts with DRM.
-					* Mac, iOS App Store are a no no.
-					* Android, Linux appstores are fine.
-					* VLC was pulled off initially.
-					* Dual license (like MySQL did).
+					## There is no solution
+					* Lock down the environment.
+					* Use a private registry.
+					* `npm audit`.
+					* Snyk.
+				</section>
+
+				<section data-markdown>
+					* JSON + NoSQL = Potentially bad.
+					* Always use a schema.
+					* Always validate user data.
+					* Avoid type manipulation.
+					* I 💖 joi.
+				</section>
+
+				<section data-markdown>
+					* joi can validate data.
+					* joi can convert data.
+					* joi works on the client side as well.
+				</section>
+				<section>
+					<pre>
+						<code>
+const schema = Joi.object().keys({
+ enabled: Joi.boolean().default(false),
+ source: Joi.alternatives().try(
+  Joi.string().valid(validS),
+  Joi.array().items(Joi.string().valid(validS)),
+ ),
+ sourceClass: Joi.alternatives().try(
+  Joi.string().valid(validSC),
+  Joi.array().items(Joi.string().valid(validSC)),
+ ),
+});
+						</code>
+					</pre>
 				</section>
 				<section data-markdown>
-					## GPL 3
-					### Is compatible with:
-					* GPL 2 (if "or later" is used)
-					* LGPL, AGPL, Apache 2.0, *BSD, MPL, MIT.
+					* Don't blindly use user data in the app.
+					* `$sce.trustAsHtml`.
+					* `dangerouslySetInnerHTML`.
+					* `innerhtml.bind`.
+					* `v-html`.
 				</section>
 				<section data-markdown>
-					## GPL 3
-					### Is not compatible with:
-					* GPL 2
-					* AGPL 1, Apache 1.x, APSL, Original BSD, MPL 1.1
-					
-					[More on GNU compatible licenses](https://www.gnu.org/licenses/license-list.html#GPLCompatibleLicenses).
+					* Don't assume packages sanitize the data.
+					* Don't assume frameworks sanitize the data.
+					* They don't or it's not turned on.
+					* Always check for vulnerabilities.
 				</section>
 				<section data-markdown>
-					## BSD, MIT, ISC
-					* On the other side of the spectrum.
-					* Pretty much do what you want.
-					* Nothing about patents.
-					* Nothing about trademarks.
-					* Simple language.
+					* Never blindly trust query params.
+				</section>
+				<section>
+					<pre><code>qs.parse('user=foo&pass=bar')</code></pre>
+					<pre>
+						<code>
+{
+	user: foo,
+	pass: bar,
+}
+						</code>
+					</pre>
+				</section>
+				<section>
+					<pre><code>qs.parse('user=foo&pass[$ne]=bar')</code></pre>
+					<pre>
+						<code>
+{
+	user: foo,
+	pass: {
+		$ne: 'bar',
+	},
+}
+						</code>
+					</pre>
+				</section>
+				<section>
+					<pre>
+						<code>
+curl -X POST -H "Content-Type: application/json" \
+--data '{ "user"="foo", "pass": {"$gt": ""}}'
+https://example.com/login
+						</code>
+					</pre>
 				</section>
 				<section data-markdown>
-					## MPL
-					* In the middle.
-					* Allows proprietary use.
-					* Result can be under a proprietary license.
-					* Can be part of closed source software.
-					* MPL code must be made available.
-					* Patents, trademarks.
+					* ReDoS
+					* Evil Regular Expressions.
+					* `(a+)+`, `([a-zA-Z]+)*` or `(a|aa)+`.
+					* `aaaaaaaaaaaaaaaaaaaaaaaaX`.
+					* See `ms`, `moment` or `neogitator`.
+					* Use `safe-regex`.
+				</section>
+	
+				<section data-markdown>
+					# Exfiltration of data
+				</section>
+
+				<section data-markdown>
+					* Always use a schema.
+					* Always validate.
+					* You might expose sensitive information.
+					* Have you heard about our lord and saviour joi? 🙌
+				</section>
+	
+				<section>
+					<pre><code>Object.assign(output, this[foo]);</code></pre>
+					<ul>
+						<li>Not Node specific.</li>
+						<li>Due to language features, more frequent.</li>
+						<li>Make sure output only contains the right info.</li>
+						<li>Make sure `foo` is not a sensitive property.</li>
+					</ul>
+				</section>
+				<section>
+					<pre><code>qs.parse('user[$ne]=voidberg')</code></pre>
+					<pre>
+						<code>
+{
+	user: {
+		$ne: 'voidberg',
+	},
+}
+						</code>
+					</pre>
 				</section>
 				<section data-markdown>
-					## Apache
-					* Do what you want.
-					* Preserve copyright, license, notices.
-					* State changes made.
-					* Patents, trademarks.
+					# Mass assignment
 				</section>
 				<section data-markdown>
-					## Fair Source
-					* Tries to monetize OSS.
-					* More than 15 employees: pay.
-					* Difficult to integrate with other licenses.
-					* Sourcegraph, Codenvy, Data Duck, GitLab.
+					* Same as exfiltration, `Object.assign`.
+					* E.g. overwrite access properties on logged in user.
+					* E.g. upload SSH key to other people (Github).
 				</section>
 				<section data-markdown>
-					## Public domain
-					* Public domain is tricky.
-					* Some lawyers say you can't put things in the public domain.
-					* Some say you can via a 'dedication'.
-					* This is difficult in EU due to 'moral rights'.
-					* sqlite
+					# Remote Memory Exposure
 				</section>
 				<section data-markdown>
-					## Unlicense
-					* Tries to put code in the public domain via a license.
-					* Doesn't quite work due to 'moral rights'.
-					* Don't use it.
+					* `new Buffer(200)`.
+					* Data is not zeroed.
+					* Can expose sensitive info.
+					* Lots of packages had vulnerabilities.
+				</section>
+				<section>
+					<pre>
+						<code>
+curl -H "Content-Type: application/json" \
+--data '{"content":800}' \
+http://example.com/create
+						</code>
+					</pre>
+					<pre>
+						<code>
+const jsonString = '100';
+const myBuffer = Buffer(JSON.parse(jsonString));
+						</code>
+					</pre>
 				</section>
 				<section data-markdown>
-					## WTFPL
-					* Do what the fuck you want to license.
-					* Don't use it.
+					* `buf.fill(0)`.
+					* `ArrayBuffer` or `TypedArray`.
+					* Kinda better from Node 6.
+					* `alloc` and `allocUnsafe`.
 				</section>
 				<section data-markdown>
-					## Creative Commons
-					* Books, music, photos, blog posts etc.
-					* Not recommended for code.
-					* CC0 is the equivalent of Unlicense.
+					# Eval
 				</section>
 				<section data-markdown>
-					## Which one to choose?
-					* It really depends on your project.
-					* MIT, Apache 2.0, GPLv3
-					
-					[choosealicense.com](http://choosealicense.com/)
+					* Sometimes it's needed.
+					* `new Function`.
+					* `vm.runIn*Context`.
+					* `vm.Script.run*`.
+					* `WebAssembly.compile`.
 				</section>
 				<section data-markdown>
-					## Other things
-					* Watch for simple licenses with extra things.
-					* e.g. react's PATENTS file.
-					* Stack Overflow's content is CC, migrating to MIT.
-					* You probably violated the license.
+					* You can escape the sandbox.
+					* Frozen realms proposal.
+					* Even if you don't eval, template engines and other libraries do.
+					* `dustjs` and Paypal.
+					* Easier to trick on client side.
 				</section>
-				<section data-markdown>
-					# So you've started an FOSS project
-				</section>
-				<section data-markdown>
-					### Contributions come.
-					### Project grows, gains traction.
-					### You have 100 contributors.
-				</section>
-				<section data-markdown>
-					## And then...
-					* You decide to change or add another license.
-					* You want to sue someone.
-					* You are getting sued because somebody contributed "bad" code.
-				</section>
-				<section data-markdown>
-					## So...
-					* You have to get approval from 100 people.
-					* You have to involve anyone in the lawsuit.
-					* You are getting sued for someone else's mistake.
-				</section>
-				<section data-markdown>
-					## Contributor License Agreement
-					* Copyright gets transferred to you / your organization.
-					* Can protect you from getting sued.
-					* Moral rights rears it's head.
-				</section>
-				<section data-markdown>
-					## VLC
-					* Moved from GPL to LGPL.
-					* French, so moral and patrimonial rights.
-					* libVLC: 150 devs, 80,000 locs.
-					* Plugins: 300 devs, 300,000 locs.
+				<section>
+					<pre>
+						<code>
+const x = {},
+a = 'constructor',
+b = 'constructor',
+s = 'console.log(s)';
+x[a][b](s)();
+						</code>
+					</pre>
 				</section>
 				<section data-markdown>
 					## Resources
-					
-					* [http://choosealicense.com/](http://choosealicense.com/)
-					* [https://tldrlegal.com](https://tldrlegal.com)
+
+					* [https://nodesecroadmap.fyi/](https://nodesecroadmap.fyi/)
+					* [Front End Checklist](https://github.com/thedaviddias/Front-End-Checklist#security)
+					* [Essential Node.js Security](https://leanpub.com/nodejssecurity)
 				</section>
 				<section data-markdown>
 					## Thank you!
 					#### [andu@ctrlz.ro](mailto:andu@ctrlz.ro)
 					#### [@voidberg](https://twitter.com/voidberg)
 					#### [Rate the sessions](https://www.surveymonkey.com/r/QTLXNVQ)
-				</section>								
+				</section>
 			</div>
 		</div>
 
